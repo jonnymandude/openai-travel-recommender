@@ -14,15 +14,15 @@ class QuestionForm(FlaskForm):
     location = StringField('Location',
                          id='location',
                          validators=[DataRequired()])
-    StartDate = PasswordField('StartDate',
+    StartDate = StringField('StartDate',
                              id='StartDate',
                              validators=[DataRequired()])
 
-    EndDate = PasswordField('EndDate',
+    EndDate = StringField('EndDate',
                              id='EndDate',
                              validators=[DataRequired()])
 
-    Interests = PasswordField('Interests',
+    Interests = StringField('Interests',
                              id='Interests',
                              validators=[DataRequired()])
                     
