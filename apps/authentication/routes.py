@@ -50,8 +50,9 @@ def login():
 
     if not current_user.is_authenticated:
         return render_template('accounts/login.html',
+                                msg='Welcome to Travel Agent GPT!',
                                form=login_form)
-    return redirect(url_for('home_blueprint.index'))
+    return redirect(url_for('home_blueprint.travel'))
 
 
 @blueprint.route('/register', methods=['GET', 'POST'])

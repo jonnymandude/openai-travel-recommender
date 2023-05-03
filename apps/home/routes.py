@@ -8,12 +8,21 @@ from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 
+from apps.home.forms import QuestionForm
+
 
 @blueprint.route('/index')
 @login_required
 def index():
 
     return render_template('home/index.html', segment='index')
+
+@blueprint.route('/travel')
+@login_required
+def travel():
+
+    question_form = QuestionForm(request.form)
+    return render_template('home/travel.html', segment='travel', form = question_form)
 
 
 @blueprint.route('/<template>')
