@@ -1,23 +1,22 @@
 import os
 import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "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"
 
 
 class OpenAIClient:
     def __init__(self, model="gpt-3.5-turbo"): 
         self.model = model 
 
-    def _request(message, role="user"):
+    def _request(self, message, role="user"):
         completion = openai.ChatCompletion.create(
             model=self.model,
             messages=[
                 {"role": role, "content": message}
             ]
-        )  
-        app.logger.info(f"Open AI Response: {completion}")
+        )
         return completion.choices[0].message
 
-    def vacation_recommendation(location, start_date, end_date, interests): 
+    def vacation_recommendation(self, location, start_date, end_date, interests): 
 
         message = f"""I would like travel recomenations. I 
         am visiting {location} from {start_date} to {end_date}. 
