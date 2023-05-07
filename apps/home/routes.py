@@ -30,13 +30,11 @@ def travel():
             request.form['EndDate'],
             request.form['Interests']
         )
-
-        print(recommendation)
+        
+        content = recommenation["content"].strip('during my stay?')
 
         return render_template('home/recommendation.html',
-                               msg=recommendation["content"])
-
-
+                               msg=content)
 
     return render_template('home/travel.html', segment='travel', form = question_form)
 
