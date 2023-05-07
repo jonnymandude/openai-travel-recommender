@@ -1,8 +1,4 @@
-{% extends "layouts/base-fullscreen.html" %}
-
-{% block title %} Sign IN {% endblock %} 
-
-{% block body_class %} sign-in-basic {% endblock %}
+{% extends "layouts/base.html" %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -24,11 +20,7 @@
                 </h4>
                 <div class="row mt-3">
                   <p class="mb-0 text-white text-center">
-                    {% if msg %}
                       {{ msg | safe }}
-                    {% else %}
-                      Add your credentials
-                    {% endif %}
                   </p>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import os
 import openai
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_KEY")
 
 
 class OpenAIClient:
